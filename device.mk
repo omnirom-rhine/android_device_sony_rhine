@@ -20,6 +20,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 SONY_ROOT = device/sony/rhine/rootdir
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/fstab.rhine:root/fstab.rhine \
+    $(SONY_ROOT)/twrp.fstab:recovery/root/etc/twrp.fstab \
     $(SONY_ROOT)/init.rhine.rc:root/init.rhine.rc \
     $(SONY_ROOT)/init.rhine.usb.rc:root/init.rhine.usb.rc \
     $(SONY_ROOT)/init.rhine.pwr.rc:root/init.rhine.pwr.rc \
@@ -213,3 +214,11 @@ $(call add-product-dex-preopt-module-config,services,--compiler-filter=speed)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp \
     persist.data.qmi.adb_logmask=0
+
+#Bootimg tools
+PRODUCT_PACKAGES += \
+    extract_elf_ramdisk
+
+# Recovery keycheck
+PRODUCT_PACKAGES += \
+    keycheck
