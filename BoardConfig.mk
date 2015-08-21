@@ -108,7 +108,8 @@ ifeq ($(HOST_OS),linux)
 endif
 
 BUILD_KERNEL := true
--include vendor/sony/kernel/KernelConfig.mk
+TARGET_KERNEL_SOURCE := kernel/sony/msm
+TARGET_KERNEL_CONFIG := aosp_rhine_togari_defconfig
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
