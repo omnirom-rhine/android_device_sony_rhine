@@ -130,6 +130,7 @@ PRODUCT_PACKAGES += \
 
 #NFC
 PRODUCT_PACKAGES += \
+    nfc.rhine \
     com.android.nfc_extras \
     libnfc_jni \
     libnfc \
